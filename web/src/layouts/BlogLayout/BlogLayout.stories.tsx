@@ -1,13 +1,13 @@
-import type { Meta, StoryObj } from '@storybook/react'
-
 import BlogLayout from './BlogLayout'
 
-const meta: Meta<typeof BlogLayout> = {
-  component: BlogLayout,
+export const loggedIn = () => {
+  mockCurrentUser({ id: 1, email: 'rob@redwoodjs.com' })
+
+  return <BlogLayout />
 }
 
-export default meta
+export const loggedOut = () => {
+  return <BlogLayout />
+}
 
-type Story = StoryObj<typeof BlogLayout>
-
-export const Primary: Story = {}
+export default { title: 'Layouts/BlogLayout' }

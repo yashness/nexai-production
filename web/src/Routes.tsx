@@ -13,6 +13,7 @@ import ScaffoldLayout from 'src/layouts/ScaffoldLayout'
 
 import { useAuth } from './auth'
 import BlogLayout from './layouts/BlogLayout/BlogLayout'
+import VideoLayout from './layouts/VideoLayout/VideoLayout'
 
 const Routes = () => {
   return (
@@ -30,11 +31,17 @@ const Routes = () => {
         </Set>
       </PrivateSet>
       <Set wrap={BlogLayout}>
+
         <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
         <Route path="/about" page={AboutPage} name="about" />
         <Route path="/contact" page={ContactPage} name="contact" />
         <Route path="/" page={HomePage} name="home" />
       </Set>
+
+      <Set wrap={VideoLayout}>
+        <Route path="/video" page={VideoPage} name="video" />
+      </Set>
+
 
       <Route notfound page={NotFoundPage} />
     </Router>
