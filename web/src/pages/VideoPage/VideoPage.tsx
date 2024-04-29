@@ -4,15 +4,17 @@ import { useState } from 'react'
 import Video from 'src/components/Video'
 
 const QUERY = gql`
-  query FindNewsQuery {
+  query {
     newses {
       id
       title
       summary
       link
-      imageURL
-      authorName
+      author
       published
+      image
+      rss_title
+      rss_image
     }
   }
 `

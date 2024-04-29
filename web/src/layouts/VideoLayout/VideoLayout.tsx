@@ -16,7 +16,7 @@ const VideoLayout = ({ children }: VideoLayoutProps) => {
             className="text-blue-400 transition duration-100 hover:text-blue-100"
             to={routes.home()}
           >
-            Redwood Blog
+            RSS to Video
           </Link>
         </h1>
         <nav>

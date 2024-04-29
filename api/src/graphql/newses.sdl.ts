@@ -1,25 +1,14 @@
 export const schema = gql`
   type News {
-    id: String!
+    id: Int!
     title: String!
     summary: String!
     link: String!
     published: String!
+    image: String!
     author: String!
-    imageURL: String!
-    titleDetailType: String!
-    titleDetailLanguage: String!
-    titleDetailBase: String!
-    titleDetailValue: String!
-    summaryDetailType: String!
-    summaryDetailLanguage: String!
-    summaryDetailBase: String!
-    summaryDetailValue: String!
-    linkRel: String!
-    linkType: String!
-    linkHref: String!
-    linkLength: String!
-    authorName: String!
+    rss_image: String!
+    rss_title: String!
   }
 
   type Query {

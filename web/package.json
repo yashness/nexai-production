@@ -17,6 +17,7 @@
     "@redwoodjs/web": "7.4.2",
     "@remotion/google-fonts": "^4.0.147",
     "@remotion/transitions": "^4.0.147",
+    "feed-reader": "^6.1.4-rc1",
     "humanize-string": "2.1.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
