@@ -1,13 +1,20 @@
 import { Player } from "@remotion/player";
 import { MyComp } from "../../remotion/Composition";
 import { useEffect, useState } from "react";
-const Video = ({news}) => {
-  const [duration, setDuration] = useState(30)
+import React from 'react';
+import { NewsItem } from "src/remotion/types";
+import { PER_SUMMARY_CHAR_SECONDS } from "src/remotion/Constants";
+
+interface VideoProps {
+  data: NewsItem[];
+}
+
+const Video: React.FC<VideoProps> = ({data}) => {
+  const news = data;
+  const [duration, setDuration] = useState<number>(30);
   useEffect(() => {
-    // calculate duration in frames
-    const PER_NEWS_SECONDS = 3
-    const durationInFrames = news.length * 30 * PER_NEWS_SECONDS
-    setDuration(durationInFrames)
+    const durationInFrames = news.reduce((total, item) => total + item.summary.length * 30 * PER_SUMMARY_CHAR_SECONDS, 0)
+    setDuration(Math.round(durationInFrames))
   }, [news])
   if(!duration) return null
   return (

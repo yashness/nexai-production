@@ -23,26 +23,12 @@ const Routes = () => {
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
       <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
       <PrivateSet unauthenticated="home">
-        <Set wrap={ScaffoldLayout} title="Posts" titleTo="posts" buttonLabel="New Post" buttonTo="newPost">
-          <Route path="/admin/posts/new" page={PostNewPostPage} name="newPost" />
-          <Route path="/admin/posts/{id:Int}/edit" page={PostEditPostPage} name="editPost" />
-          <Route path="/admin/posts/{id:Int}" page={PostPostPage} name="post" />
-          <Route path="/admin/posts" page={PostPostsPage} name="posts" />
+        <Set wrap={VideoLayout}>
+          <Route path="/rss-video" page={RssVideoPage} name="rssVideo" />
+          <Route path="/video" page={VideoPage} name="video" />
+          <Route path="/" page={HomePage} name="home" redirect="rssVideo" />
         </Set>
       </PrivateSet>
-      <Set wrap={BlogLayout}>
-
-        <Route path="/article/{id:Int}" page={ArticlePage} name="article" />
-        <Route path="/about" page={AboutPage} name="about" />
-        <Route path="/contact" page={ContactPage} name="contact" />
-        <Route path="/" page={HomePage} name="home" />
-      </Set>
-
-      <Set wrap={VideoLayout}>
-        <Route path="/video" page={VideoPage} name="video" />
-      </Set>
-
-
       <Route notfound page={NotFoundPage} />
     </Router>
   )

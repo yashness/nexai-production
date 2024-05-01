@@ -1,0 +1,1 @@
+export const PER_SUMMARY_CHAR_SECONDS = 0.03;
