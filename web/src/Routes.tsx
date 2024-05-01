@@ -22,11 +22,11 @@ const Routes = () => {
       <Route path="/signup" page={SignupPage} name="signup" />
       <Route path="/forgot-password" page={ForgotPasswordPage} name="forgotPassword" />
       <Route path="/reset-password" page={ResetPasswordPage} name="resetPassword" />
-      <PrivateSet unauthenticated="home">
+
+      <PrivateSet unauthenticated="login">
         <Set wrap={VideoLayout}>
-          <Route path="/rss-video" page={RssVideoPage} name="rssVideo" />
-          <Route path="/video" page={VideoPage} name="video" />
-          <Route path="/" page={HomePage} name="home" redirect="rssVideo" />
+          <Route path="/" page={RssVideoPage} name="home" />
+          {/* */}
         </Set>
       </PrivateSet>
       <Route notfound page={NotFoundPage} />
